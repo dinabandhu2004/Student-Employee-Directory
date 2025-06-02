@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+form,
+#search {
+  margin-bottom: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  flex: 0 0 calc(50% - 20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  gap: 60px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card p {
+  margin: 5px 0;
+  font-family: Arial, sans-serif;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  position: sticky;
+  top: 0px;
+  padding: 0 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.menu-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+.fa-solid {
+  font-size: 30px;
+}
+
+.header-main {
+  font-size: 40px;
+  flex-grow: 1;
+  text-align: center;
+  min-width: 200px;
+}
+
+.menu-options {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  background-color: #191818;
+  padding: 0 10px;
+  transition: max-height 0.7s ease, opacity 0.2s ease;
+  flex-direction: column;
+}
+
+.menu-options.show {
+  display: flex;
+  max-height: 200px;
+  opacity: 1;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+.options-choose {
+  margin: 5px 0;
+  padding: 10px 60px;
+  background-color: #191818;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  text-align: start;
+  color: white;
+}
+
+.options-choose:hover {
+  background-color: #bbb;
+}
+
+.form {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.form-style {
+  height: 30px;
+  width: 220px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  box-shadow: inset 1px 1px 10px -5px black;
+  margin: 5px;
+  min-width: 200px;
+  max-width: 90vw;
+}
+
+.form-style:hover {
+  outline: 2px solid #000000d8;
+}
+
+.form-style-upload {
+  background-color: white;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  box-shadow: inset 1px 1px 10px -5px black;
+  margin: 5px;
+  min-width: 200px;
+  max-width: 90vw;
+}
+
+.form-style-upload:hover {
+  outline: 2px solid #000000d8;
+}
+
+#submit {
+  background-color: white;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 1px 1px 10px -5px black;
+  margin: 5px;
+  min-width: 100px;
+  max-width: 90vw;
+}
+
+#submit:hover {
+  outline: 2px solid #000000d8;
+  cursor: pointer;
+}
+
+.break {
+  height: 5px;
+  width: 100%;
+  background-color: rgba(2, 0, 36, 1);
+  border-radius: 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 0px;
+  position: sticky;
+  top: 80px;
+  padding: 0 10px;
+}
+
+#search {
+  height: 40px;
+  width: 50vw;
+  border-radius: 25px;
+  padding: 5px 15px;
+  box-shadow: inset 2px 2px 10px -5px black;
+  max-width: 600px;
+  min-width: 250px;
+}
+
+#directory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex: 0 0 calc(100% - 20px);
+  flex-direction: column;
+}
+
+/* Responsive tweaks */
+@media only screen and (max-width: 900px) {
+  .card {
+    flex: 0 0 calc(100% - 20px);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .header-main {
+    font-size: 30px;
+  }
+
+  .menu-icon {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 450px) {
+  .form {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .form-style,
+  .form-style-upload,
+  #submit {
+    width: 90vw;
+    max-width: none;
+    margin: 8px 0;
+  }
+
+  .header-main {
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu-icon {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  #search {
+    width: 90vw;
+  }
+  .search-bar{
+  top: 100px;
+  }
+  .options-choose{
+    font-size: 25px;
+  }
+}
